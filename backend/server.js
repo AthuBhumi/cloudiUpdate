@@ -23,8 +23,19 @@ const blogRoutes = require('./routes/blogs');
 app.use(helmet());
 app.use(morgan('combined'));
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:3003', 'http://localhost:3000'],
-  credentials: true
+  origin: [
+    'http://localhost:5173', 
+    'http://localhost:3003', 
+    'http://localhost:3000',
+    'http://164.92.74.170:5173',
+    'http://164.92.74.170:3000',
+    'http://164.92.74.170:3003'
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  preflightContinue: false,
+  optionsSuccessStatus: 200
 }));
 
 // Rate limiting
