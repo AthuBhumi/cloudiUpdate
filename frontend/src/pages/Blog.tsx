@@ -29,7 +29,7 @@ const Blog: React.FC = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:3002/api/blogs?published=true');
+      const response = await fetch('http://164.92.74.170:3000/api/blogs?published=true');
       if (!response.ok) {
         throw new Error('Failed to fetch blogs');
       }
@@ -45,7 +45,7 @@ const Blog: React.FC = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await fetch('http://localhost:3002/api/blogs/categories/list');
+      const response = await fetch('http://164.92.74.170:3000/api/blogs/categories/list');
       if (response.ok) {
         const data = await response.json();
         setCategories(['All', ...data.categories]);

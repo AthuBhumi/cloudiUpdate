@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:3002/api';
+const API_BASE_URL = 'http://164.92.74.170:3000/api';
 
 export const api = {
   // Admin authentication
